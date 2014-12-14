@@ -7,7 +7,9 @@ return array(
 
 	// preloading 'log' component
 	'preload'=>array(
-		'log'),
+		'log',
+        php_sapi_name() == 'cli' ? '' : 'booster',
+	),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -69,6 +71,10 @@ return array(
 					'levels'=>'error, warning',
 				),
 			),
+		),
+		'booster' => array(
+            'class' => 'ext.bootstrap.components.Booster',
+            'fontAwesomeCss' => true,
 		),
 	),
 
